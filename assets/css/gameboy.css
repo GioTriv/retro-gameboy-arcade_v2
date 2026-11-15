@@ -1,0 +1,269 @@
+.gameboy{
+
+    width:450px;
+
+    background:linear-gradient(
+        145deg,
+        #d9d9d9,
+        #bdbdbd
+    );
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
+
+    border:4px solid #999;
+}
+
+.top-panel{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+}
+
+.power-led{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#ff0000;
+
+    box-shadow:
+        0 0 10px red;
+
+    animation:
+        blink 1s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.4;
+    }
+}
+
+.screen-container{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.screen-container::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    repeating-linear-gradient(
+
+        to bottom,
+
+        rgba(0,0,0,.08),
+
+        rgba(0,0,0,.08) 2px,
+
+        transparent 2px,
+
+        transparent 4px
+    );
+}
+
+
+.brand{
+    text-align:center;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.screen-container{
+
+    background:#445c2c;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    border:8px solid #444;
+}
+
+
+.screen-header{
+
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    color:white;
+
+    font-size:14px;
+}
+
+canvas{
+
+    display:block;
+
+    margin:auto;
+
+    background:#9bbc0f;
+    image-rendering:pixelated;
+}
+ .controls{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+}
+
+.dpad{
+
+    width:80px;
+    height:80px;
+
+    background:#444;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:2rem;
+
+    border-radius:10px;
+}
+
+.buttons{
+
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.button{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#8c1450;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.15s;
+}
+
+.button:hover{
+
+    transform:
+        translateY(2px);
+
+    box-shadow:
+        inset 0 0 10px rgba(0,0,0,.5);
+}
+
+.speaker{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:25px;
+}
+
+.speaker span{
+
+    width:4px;
+
+    height:30px;
+
+    background:#777;
+
+    border-radius:2px;
+}
+
+
+
+.instructions{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:.9rem;
+}
+
+#bootLogo{
+    display:none;
+
+    width:180px;
+
+    margin:40px auto;
+
+    opacity:0;
+
+    animation:
+        fadeIn 5s forwards;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@media (max-width:600px){
+
+    .gameboy{
+
+        width:95%;
+
+        padding:15px;
+    }
+
+    canvas{
+
+        width:100%;
+        height:auto;
+    }
+
+    .button{
+
+        width:50px;
+        height:50px;
+    }
+}

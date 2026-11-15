@@ -1,0 +1,17 @@
+* {
+    margin:0;
+    padding: none;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#1a1a1a;
+
+    font-family: 'Press Start 2P', cursive;
+}
