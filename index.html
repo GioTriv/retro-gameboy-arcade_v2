@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Retro Game Boy Arcade</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gameboy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet">
+</head>
+<body>
+
+<div class="gameboy">
+
+  <div class="top-panel">
+
+    <div class="power-led"></div>
+
+    <div class="brand">
+        RETRO ARCADE SYSTEM
+    </div>
+
+</div>
+
+    <div class="screen-container">
+
+        <div class="screen-header">
+            <span id="game-title">SNAKE</span>
+            <span>SCORE: <span id="score">0</span></span>
+            <span>HIGH: <span id="high-score">0</span></span>
+        </div>
+
+        <img
+    id="bootLogo"
+    src="image/logo.svg"
+    alt="Logo">
+
+        <canvas
+            id="gameCanvas"
+            width="320"
+            height="320">
+        </canvas>
+
+    </div>
+
+    <div class="controls">
+
+        <div class="dpad">
+            +
+        </div>
+
+        <div class="buttons">
+
+            <div class="button">B</div>
+            <div class="button">A</div>
+
+        </div>
+
+        <div class="speaker">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+    </div>
+
+    <div class="instructions">
+        ← ↑ → ↓ Move
+        <br>
+        SPACE Restart
+    </div>
+
+</div>
+
+<script src="assets/js/snake.js"></script>
+<script src="assets/js/state.js"></script>
+<script src="assets/js/tetris.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/audio.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
