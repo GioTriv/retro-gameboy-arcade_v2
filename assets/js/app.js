@@ -58,6 +58,12 @@ function drawBoot() {
     if (bootCounter >= 90) {
         currentState = GAME_STATE.MENU;
     }
+    gameTitle.textContent =
+    "BOOT";
+
+scoreBoard.textContent =
+    "LOADING";
+    
 }
 
 // ======================================

@@ -13,7 +13,11 @@ const games = [
 ];
 
 function drawMenu() {
-    
+    gameTitle.textContent =
+    "MENU";
+
+scoreBoard.textContent =
+    "READY";
 
     ctx.fillStyle = "#9bbc0f";
     ctx.fillRect(0, 0, canvas.width, canvas.height);

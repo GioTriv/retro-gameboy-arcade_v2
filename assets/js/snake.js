@@ -4,8 +4,14 @@ const canvas =
 const ctx =
     canvas.getContext("2d");
 
-const scoreElement =
-    document.getElementById("score");
+const gameTitle =
+    document.getElementById(
+        "game-title"
+    );
+
+const scoreBoard =
+    document.getElementById(
+        "score-board");
 
 const highScoreElement =
     document.getElementById("high-score");
@@ -49,9 +55,16 @@ function initGame() {
     frameCount = 0;
 
     food = createFood();
+    gameTitle.textContent =
+    "SNAKE";
 
-    scoreElement.textContent =
-        score;
+scoreBoard.textContent =
+    "SCORE 0";
+
+updateHighScore();
+
+   scoreBoard.textContent =
+    `SCORE ${score}`;
 }
 
 // ======================================
@@ -146,8 +159,8 @@ function update() {
 
         score++;
 
-        scoreElement.textContent =
-            score;
+        scoreBoard.textContent =
+    `SCORE ${score}`;
 
         food = createFood();
 
@@ -265,6 +278,12 @@ function endGame() {
             "game-over"
         );
     }
+    scoreBoard.textContent =
+    `BEST ${
+        localStorage.getItem(
+            "snakeHighScore"
+        ) || 0
+    }`;
 }
 
 // ======================================
@@ -295,12 +314,12 @@ function saveHighScore() {
     }
 }
 
-function updateHighScore() {
+function updateHighScore(key = "snakeHighScore") {
 
     highScoreElement.textContent =
 
         localStorage.getItem(
-            "snakeHighScore"
+            key
         ) || 0;
 }
 

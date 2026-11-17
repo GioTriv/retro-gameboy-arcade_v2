@@ -110,6 +110,14 @@ function createPiece() {
 
 function initTetris() {
 
+    gameTitle.textContent =
+    "TETRIS";
+
+scoreBoard.textContent =
+    "SCORE 0";
+
+    updateHighScore("tetrisHighScore");
+
     tetrisBoard = [];
 
     for (let row = 0; row < ROWS; row++) {
@@ -300,6 +308,9 @@ function clearLines() {
             break;
     }
 
+    scoreBoard.textContent =
+    `SCORE ${tetrisScore}`;
+
     tetrisLevel =
         Math.floor(
             tetrisLines / 10
@@ -332,14 +343,14 @@ function saveTetrisHighScore() {
             )
         ) || 0;
 
-    if (tetrisScore > currentHighScore) {
+    if (tetrisScore > best) {
 
         localStorage.setItem(
             "tetrisHighScore",
             tetrisScore
         );
 
-        updateHighScore();
+        updateHighScore("tetrisHighScore");
     }
 }
 
@@ -370,6 +381,10 @@ function updateTetris() {
             tetrisGameOver = true;
 
             saveTetrisHighScore();
+
+            scoreBoard.textContent =`BEST ${
+        localStorage.getItem("tetrisHighScore") || 0
+    }`;
 
             if (
                 typeof playSound === "function"
